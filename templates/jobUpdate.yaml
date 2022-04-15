@@ -43,7 +43,7 @@ spec:
             - mountPath: /var/www/html/config/jwt/
               name: shopware-jwt
             - mountPath: /var/www/html/config/packages/
-              name: shopware-minio
+              name: shopware-storage
             - mountPath: /var/www/html/custom/plugins
               name: shopware-plugins
       restartPolicy: OnFailure
@@ -51,10 +51,9 @@ spec:
         - name: shopware-jwt
           secret:
             secretName: {{ printf "%s-jwt" (include "common.names.fullname" .) | trunc 63 | trimSuffix "-" }}
-        {{- if .Values.minio.enabled }}
-        - name: shopware-minio
+        - name: shopware-storage
           configMap:
-            name: {{ printf "%s-minio" (include "common.names.fullname" .) | trunc 63 | trimSuffix "-" }}
+            name: {{ printf "%s-storage" (include "common.names.fullname" .) | trunc 63 | trimSuffix "-" }}
         {{- end }}
         - name: shopware-plugins
         {{- if .Values.persistence.enabled}}
