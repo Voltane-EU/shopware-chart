@@ -54,7 +54,6 @@ spec:
         - name: shopware-storage
           configMap:
             name: {{ printf "%s-storage" (include "common.names.fullname" .) | trunc 63 | trimSuffix "-" }}
-        {{- end }}
         - name: shopware-plugins
         {{- if .Values.persistence.enabled}}
           persistentVolumeClaim:
