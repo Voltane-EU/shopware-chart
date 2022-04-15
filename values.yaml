@@ -128,7 +128,7 @@ session:
 taskRunner:
   enabled: true
   replicaCount: 1
-  command: ["scheduled-task:run",  "--time-limit=60"]
+  command: ["scheduled-task:run",  "--time-limit=3600"]
   ## Shopware Task Runner containers resource requests and limits
   ## ref: http://kubernetes.io/docs/user-guide/compute-resources/
   ## @param taskRunner.resources.limits The resources limits for the Shopware container
