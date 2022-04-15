@@ -153,7 +153,11 @@ Return the ElasticSearch Hostname
 {{- end -}}
 
 {{- define "shopware.minio.endpoint" -}}
+{{- if .Values.minio.endpointOverride -}}
+{{- printf "%s" .Values.minio.endpointOverride -}}
+{{- else -}}
 {{- printf "http://%s:%d" (include "shopware.minio.fullname" .) (.Values.minio.service.ports.api | int)  -}}
+{{- end -}}
 {{- end -}}
 
 {{- define "shopware.minio.url" -}}
