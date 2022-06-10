@@ -592,6 +592,14 @@ persistence:
   ##
   existingClaim: ""
 
+persistence_jwt:
+  storageClass: ""
+  accessModes:
+    - ReadWriteMany
+  size: 1Mi
+  dataSource: {}
+  existingClaim: ""
+
 ## 'volumePermissions' init container parameters
 ## Changes the owner and group of the persistent volume mount point to runAsUser:fsGroup values
 ##   based on the podSecurityContext/containerSecurityContext parameters

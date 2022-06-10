@@ -49,8 +49,8 @@ spec:
       restartPolicy: OnFailure
       volumes:
         - name: shopware-jwt
-          secret:
-            secretName: {{ printf "%s-jwt" (include "common.names.fullname" .) | trunc 63 | trimSuffix "-" }}
+          persistentVolumeClaim:
+            claimName: {{ printf "%s-jwt" (include "common.names.fullname" .) | trunc 63 | trimSuffix "-" }}
         - name: shopware-storage
           configMap:
             name: {{ printf "%s-storage" (include "common.names.fullname" .) | trunc 63 | trimSuffix "-" }}
