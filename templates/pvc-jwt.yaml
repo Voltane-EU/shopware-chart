@@ -18,7 +18,7 @@ spec:
   resources:
     requests:
       storage: {{ .Values.persistence_jwt.size | quote }}
-  {{- include "common.storage.class" (dict "persistence_jwt" .Values.persistence_jwt "global" .Values.global) | nindent 2 }}
+  {{- include "common.storage.class" (dict "persistence" .Values.persistence_jwt "global" .Values.global) | nindent 2 }}
   {{- if .Values.persistence_jwt.dataSource }}
   dataSource: {{- include "common.tplvalues.render" (dict "value" .Values.persistence_jwt.dataSource "context" $) | nindent 4 }}
   {{- end }}
