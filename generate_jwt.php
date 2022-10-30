@@ -1,6 +1,6 @@
 <?php
 
-if (file_exists(__DIR__ . '/jwt_private.pem')) {
+if (file_exists(__DIR__ . '/private.pem')) {
     echo "Private/Public key already exists. Skipping";
     exit(0);
 }
@@ -12,7 +12,7 @@ $key = openssl_pkey_new([
     'encrypt_key_cipher' => OPENSSL_CIPHER_AES_256_CBC
 ]);
 
-openssl_pkey_export_to_file($key, __DIR__ . '/jwt_private.pem', 'shopware');
+openssl_pkey_export_to_file($key, __DIR__ . '/private.pem', 'shopware');
 
 $keyData = openssl_pkey_get_details($key);
-file_put_contents(__DIR__ . '/jwt_public.pem', $keyData['key']);
+file_put_contents(__DIR__ . '/public.pem', $keyData['key']);
