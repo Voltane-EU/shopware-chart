@@ -41,4 +41,4 @@ name: shopware-voltane
 sources:
   - https://github.com/shyim/shopware
   - https://www.shopware.com
-version: 2.0.10
+version: 2.0.11
