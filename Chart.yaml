@@ -1,7 +1,7 @@
 annotations:
   category: CMS
 apiVersion: v2
-appVersion: 6.4.7
+appVersion: 6.4.17.2
 dependencies:
   - name: mariadb
     condition: mariadb.enabled
@@ -41,4 +41,4 @@ name: shopware-voltane
 sources:
   - https://github.com/shyim/shopware
   - https://www.shopware.com
-version: 2.0.11
+version: 2.0.12
