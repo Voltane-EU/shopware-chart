@@ -906,3 +906,6 @@ minio:
     size: 8Gi
 
   defaultBuckets: documents, media:public, theme:public, asset:public, sitemap:public
+
+
+autoUpdate: true
