@@ -35,8 +35,8 @@ keywords:
   - web
   - shopware
 maintainers:
-  - email: robjuz@gmail.com
-    name: robjuz
+  - email: ask@voltane.eu
+    name: Voltane GbR
 name: shopware-voltane
 sources:
   - https://github.com/shyim/shopware
