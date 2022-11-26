@@ -11,7 +11,9 @@ metadata:
   annotations: {{- include "common.tplvalues.render" ( dict "value" .Values.commonAnnotations "context" $ ) | nindent 4 }}
   {{- end }}
 data:
+  {{- if .Values.image.debug }}
   APP_DEBUG: {{ .Values.image.debug | quote }}
+  {{- end }}
   APP_ENV: {{ .Values.shopwareAppEnv | quote }}
   APP_URL: {{ .Values.shopwareAppUrl | quote }}
 
